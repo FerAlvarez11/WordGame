@@ -18,7 +18,7 @@ request.onload = function () {
   
     var dictionary = data [0];
     var s = dictionary.word;
-    word = s.toLowerCase();
+    word = s.toUpperCase();
 
     console.log(word);
 
@@ -33,6 +33,7 @@ request.onload = function () {
     let btnHint = document.createElement('button');
     btnHint.innerHTML = "Hint";
     btnHintDiv.appendChild(btnHint);
+    btnHint.classList.add("btnHint");
 
     const livesText = document.querySelector('#intro');
     const showIncorrectLetters = document.querySelector('#incorrectLetters');
@@ -61,8 +62,9 @@ request.onload = function () {
         modalContent.classList.add("modal-content");
         modalContent.innerHTML = text;
         nextWord = document.createElement("button");
-        nextWord.innerHTML = "Next Word>";
+        nextWord.innerHTML = "Next Word";
         modalContent.appendChild(nextWord);
+        nextWord.classList.add("nextWordBtn");
         myModal.style.display = "block";
     
         nextWord.addEventListener("click", function (event) {
@@ -95,7 +97,7 @@ request.onload = function () {
         divLetter.id = "letter_" + i;
     }
 
-    let letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 
     for (var i = 0; i < letters.length; i++) {
@@ -125,8 +127,19 @@ request.onload = function () {
 
             if (!allLettersInWord.includes(currentLetter)) {
                 incorrectLetter.push(currentLetter);
-                livesText.innerText = --lives; 
-                showIncorrectLetters.innerText = incorrectLetter + " ";
+                livesText.innerText = --lives;
+
+                let incorrectLettersText ="";
+
+                incorrectLetter.forEach(letter =>{
+                    incorrectLettersText = incorrectLettersText + letter.toUpperCase() + ", ";
+                });
+                
+                incorrectLettersText = incorrectLettersText.slice(0,-2);
+
+                showIncorrectLetters.innerText = incorrectLettersText;
+
+                console.log("inco", incorrectLetter);
                 document.getElementById(`btn_${currentLetter}`).disabled = true;
                   
                 if (incorrectLetter.includes(currentLetter)){
@@ -140,7 +153,7 @@ request.onload = function () {
             }
        
             if (lives === 0){
-                createModal("Oops! you should try that again")
+                createModal(`Oops! The correct word was ${word}. You should try that again!`)
             }
 
             putLettersOnDivs(currentLetter, positionLetter);
