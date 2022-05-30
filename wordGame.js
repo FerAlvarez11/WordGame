@@ -22,7 +22,7 @@ request.onload = function () {
 
     console.log(word);
 
-    if (word.includes("-")){
+    if (word.includes("-") || word.length>14){
         location.reload();
     }
 
