@@ -22,7 +22,7 @@
     margin-bottom: 0.5em;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #definitionDiv{
@@ -159,9 +159,8 @@ button {
     touch-action: manipulation;
 }
 
-.btnLetter:hover
-/* .btnLetter:focus{ */{
-    background-color: teal;  
+.btnLetter:hover{
+    background-color: #00AEEF;  
 }
 .btnLetter:disabled{
     opacity: .50;
