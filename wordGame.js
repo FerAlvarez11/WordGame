@@ -19,7 +19,6 @@ request.onload = function () {
     var dictionary = data [0];
     var s = dictionary.word;
     word = s.toUpperCase();
-
     console.log(word);
 
     if (word.includes("-") || word.length>14){
@@ -38,7 +37,6 @@ request.onload = function () {
     const livesText = document.querySelector('#intro');
     const showIncorrectLetters = document.querySelector('#incorrectLetters');
 
-
     let allLettersInWord = [];
     let eachLetterInWord; 
     let incorrectLetter = [];
@@ -52,28 +50,23 @@ request.onload = function () {
 
     let nextWord;
 
-    function createModal(text) {
+    function createModal(className, text) {
 
         let myModal = document.createElement('div');
         myModal.classList.add("modal");
         document.body.appendChild(myModal);   
         let modalContent = document.createElement('div');
         myModal.appendChild(modalContent);
-        modalContent.classList.add("modal-content");
+        modalContent.classList.add(`${className}`);
         modalContent.innerHTML = text;
         nextWord = document.createElement("button");
         nextWord.innerHTML = "Next Word";
         modalContent.appendChild(nextWord);
         nextWord.classList.add("nextWordBtn");
         myModal.style.display = "block";
-    
+
         nextWord.addEventListener("click", function (event) {
            location.reload();
-        
-           if (event.key === 'Enter') {
-            event.preventDefault();
-            button.click();
-            }
         });
 
         clickEnter(nextWord);
@@ -99,7 +92,7 @@ request.onload = function () {
 
     let letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-
+    
     for (var i = 0; i < letters.length; i++) {
         let btn = document.createElement("button");
         btn.classList.add("btnLetter");
@@ -122,13 +115,13 @@ request.onload = function () {
 
 
             if (spotsTaken.length === word.length){
-                createModal("Congratulations! I bet you feel smart now");
+                createModal("modal-content-win", "Congratulations! I bet you feel smart now");
+                
             }
 
             if (!allLettersInWord.includes(currentLetter)) {
                 incorrectLetter.push(currentLetter);
                 livesText.innerText = --lives;
-
                 let incorrectLettersText ="";
 
                 incorrectLetter.forEach(letter =>{
@@ -139,13 +132,7 @@ request.onload = function () {
 
                 showIncorrectLetters.innerText = incorrectLettersText;
 
-                console.log("inco", incorrectLetter);
-                document.getElementById(`btn_${currentLetter}`).disabled = true;
-                  
-                if (incorrectLetter.includes(currentLetter)){
-                  console.log("hi");  
-                }
-              
+                document.getElementById(`btn_${currentLetter}`).disabled = true;             
             }
 
             if (lives === 1){
@@ -153,7 +140,7 @@ request.onload = function () {
             }
        
             if (lives === 0){
-                createModal(`Oops! The correct word was ${word}. You should try that again!`)
+                createModal("modal-content-loose", `Oops! The correct word was ${word}. You should try that again!`)
             }
 
             putLettersOnDivs(currentLetter, positionLetter);
@@ -166,12 +153,10 @@ request.onload = function () {
     let rValue;
 
     btnHint.addEventListener("click", function () {
-
         getRndInteger();
         livesText.innerText = --lives; 
         btnHint.disabled = true;
         putLettersOnDivs(currentLetter, positionLetter);
-        console.log(spotsAvailable);
     });
 
     function getRndInteger() {     
@@ -181,22 +166,11 @@ request.onload = function () {
             allLettersInWord.push(eachLetterInWord);
         }
 
-
-        console.log("touse",spotsAvailable);
-
         randomNumber = spotsAvailable[Math.floor(Math.random()*spotsAvailable.length)];
-
-        console.log("randomnumber", randomNumber);
 
         rValue = randomNumber;
 
-        console.log("rValue", rValue);
-
         currentLetter = allLettersInWord[rValue];
-
-        console.log("allletters", allLettersInWord[3]);
-
-        console.log("currentletter",currentLetter);
 
         positionLetter =  positionOfLetters(currentLetter);
 
@@ -208,8 +182,7 @@ request.onload = function () {
     }
 
     function putLettersOnDivs(letterToFill, positionsToFill){
-        positionsToFill.forEach(position => document.getElementById(`letter_${position}`).innerHTML = letterToFill); 
-    
+        positionsToFill.forEach(position => document.getElementById(`letter_${position}`).innerHTML = letterToFill);     
     }
 
     function positionOfLetters(letterToFill){
@@ -225,7 +198,7 @@ request.onload = function () {
                 document.getElementById(`btn_${letterToFill}`).disabled = true;
             }
         } 
-        console.log(positionLetter);
+       
         return positionLetter;
 
     }    
