@@ -1,31 +1,5 @@
 function startWordGame(gameContainerElement){
-    gameContainerElement.innerHTML = `<div class="container">    
-    <div class="row justify-content-center">
-        <div class="col-auto"><img class="logo"src="img/logo.png" alt="Word Play"></div>
-    </div>
-    </div>
-
-    <hr>
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="col">
-                    <div  class="incorrectLettersContainer">
-                        <div class="incorrectLetters">Wrong letters:</div>
-                        <div id="incorrectLetters"><i>None</i></div>
-                    </div>
-                </div>
-                <div class="livesContainer">
-                    <img class="heartImage" src="img/heart.png" alt="heart">
-                    <div class="lives">Lives:</div>
-                    <div class="numberOfLives" id="intro">5</div>
-                </div>                
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
+    gameContainerElement.innerHTML = `<div class="container">
         <div class="row justify-content-center">
             <div class="col-auto">
                 <div class="definitionContainer">
@@ -43,14 +17,41 @@ function startWordGame(gameContainerElement){
     </div>
 
     <div class="container">
+<div class="row justify-content-center">
+    <div class="col wrong-letters-lives-container">
+        <div class="col">
+            <div  class="incorrectLettersContainer">
+                <div class="incorrectLetters">Wrong letters:</div>
+                <div id="incorrectLetters"><i>None</i></div>
+            </div>
+        </div>
+        <div class="col-auto" id="btnHintDiv">
+        <div class="livesContainer">
+            <img class="heartImage" src="img/heart.png" alt="heart">
+            <div class="lives">Lives</div>
+            <div class="numberOfLives" id="intro">5</div>
+        </div>                
+    </div>
+</div>
+</div>
+
+    <div class="container">
         <div class="row justify-content-center">
             <div class="btnLettersContainer">
                 <div class="col-auto" id="btnLettersDiv"></div>
-                <div class="col-auto" id="btnHintDiv">
                 </div>
             </div>
         </div>
-    </div>`;
+    </div> 
+
+    
+    <hr>
+    
+    <div class="container">    
+    <div class="row justify-content-center">
+        <div class="col-auto"><img class="logo"src="img/logo.png" alt="Word Play"></div>
+    </div>
+    </div>    `;
 
 
     const letterDiv = document.getElementById('letterDiv');
