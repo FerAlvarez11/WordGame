@@ -1,57 +1,50 @@
 function startWordGame(gameContainerElement){
-    gameContainerElement.innerHTML = `<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <div class="definitionContainer">
-                    <p class="definitionP">Definition:</p>
-                    <div id="definitionDiv"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    gameContainerElement.innerHTML = 
+`
+<div class="definitionContainer">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class ="col-auto" id="letterDiv"></div>
+        <div class="row justify-content-center">   
+            <div class="banner-div">          
+                <div class="col-auto" id="btnHintDiv"></div>  
+                <div class="col-auto livesContainer">
+                    <img class="heartImage" src="img/heart.png" alt="heart">
+                    <div class="lives">Lives</div>
+                    <div class="numberOfLives" id="intro">5</div>
+                </div>    
+            </div>    
         </div>
-    </div>
-
-    <div class="container">
-<div class="row justify-content-center">
-    <div class="col wrong-letters-lives-container">
-        <div class="col">
-            <div  class="incorrectLettersContainer">
-                <div class="incorrectLetters">Wrong letters:</div>
-                <div id="incorrectLetters"><i>None</i></div>
-            </div>
-        </div>
-        <div class="col-auto" id="btnHintDiv">
-        <div class="livesContainer">
-            <img class="heartImage" src="img/heart.png" alt="heart">
-            <div class="lives">Lives</div>
-            <div class="numberOfLives" id="intro">5</div>
-        </div>                
-    </div>
-</div>
-</div>
-
-    <div class="container">
         <div class="row justify-content-center">
-            <div class="btnLettersContainer">
-                <div class="col-auto" id="btnLettersDiv"></div>
-                </div>
-            </div>
+            <div class="col-4"><p class="definitionP">Definition:</p></div> 
+        </div>  
+        <div class="row justify-content-center">  
+            <div class="col-auto" id="definitionDiv"></div> 
+        </div>      
+        <div class="row justify-content-center">
+        <div class ="col-auto" id="letterDiv"></div>
+        <div class="row justify-content-center">
+        <div class="col" id="incorrectLettersContainer"> 
+            <div class="incorrectLetters">Wrong letters:</div>
+            <div id="incorrectLetters">-</div>
         </div>
     </div> 
-
-    
-    <hr>
-    
-    <div class="container">    
-    <div class="row justify-content-center">
-        <div class="col-auto"><img class="logo"src="img/logo.png" alt="Word Play"></div>
     </div>
-    </div>    `;
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center fixed-bottom">    
+        <div class="btnLettersContainer">
+            <div class="col-auto" id="btnLettersDiv"></div>
+            </div>
+        </div>
+        </div>
+    </div> 
+</div> 
+
+<footer class="text-center text-white fixed-bottom" style="background-color: #fff; border-style: 1px solid black">
+<div class="col-auto"><img class="logo"src="img/logo.png" alt="Word Play"></div>
+  <!-- Grid container -->
+</footer>`;
 
 
     const letterDiv = document.getElementById('letterDiv');
@@ -109,6 +102,7 @@ function startWordGame(gameContainerElement){
             spotsAvailable.push(i);
             divLetter.id = "letter_" + i;
         }
+ 
 
         let letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
@@ -150,7 +144,13 @@ function startWordGame(gameContainerElement){
 
                     showIncorrectLetters.innerText = incorrectLettersText;
 
-                    document.getElementById(`btn_${currentLetter}`).disabled = true;             
+                    document.getElementById(`btn_${currentLetter}`).disabled = true;
+                    document.getElementById(`btn_${currentLetter}`).style.hover = "none";            
+                }
+
+              
+                if (incorrectLetter.length > 0){
+                    document.getElementById("incorrectLettersContainer").style.display = "block";
                 }
 
                 if (lives === 1 || spotsAvailable.length === 1){
@@ -161,9 +161,10 @@ function startWordGame(gameContainerElement){
                     createModal("modal-content-loose", `Oops! The correct word was ${word}. You should try that again!`)
                 }
 
+            
+
                 putLettersOnDivs(currentLetter, positionLetter);
                 
-
             });
         
         }

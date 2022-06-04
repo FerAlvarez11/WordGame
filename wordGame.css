@@ -1,12 +1,16 @@
+.banner-div{
+    width: 500px;
+}
+
 body { 
-    padding-bottom: 20px; 
     max-width: 1000px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .logo{
     width: 90px;
-    margin-top: 12px;
+    margin: 6px 0 6px 0;
 }
 
 .banner{
@@ -19,7 +23,7 @@ body {
 }
 
 .definitionContainer{
-    height: auto;
+    height: 50vH;
     width: 100%;
     padding: 10px 20px 10px 20px;
     box-shadow: 2px -1px 22px lightgrey;
@@ -31,7 +35,7 @@ body {
     margin-bottom: 0.5em;
     font-family: 'Nanum Myeongjo', serif;
     font-weight: 800;
-    font-size: 1.2rem;
+    margin: 1.5em 0 0.5em 0;
 }
 
 #definitionDiv{
@@ -42,8 +46,8 @@ body {
 }
 
 .divLetter {
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     position: relative;
     float: left;
     margin: 1px;
@@ -53,7 +57,7 @@ body {
     text-align: center;
     font-family: 'Hind Siliguri', sans-serif;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 17px;
     background-color: #f9f9ee;
     border-radius: 0;
     color: black;
@@ -61,6 +65,11 @@ body {
     box-shadow: 3px 1px 3px #000;
     
 }
+
+.footer {
+    position: sticky;
+    top: 100vh;
+  }
 
 
 
@@ -115,32 +124,40 @@ button {
     text-align: center;
 }
 
-.incorrectLettersContainer{
+#incorrectLettersContainer{
+    width: 195px;
     float: left;
+    flex: none;
+    display: none;
+
 }
 
 .incorrectLetters{
     font-family: 'Hind Siliguri', sans-serif;
-    font-weight: bolder;
     color: #b9b9b9;
+    float: left;
 }
 
 #incorrectLetters{
     font-family: 'Hind Siliguri', sans-serif;
     color: #b9b9b9;
+    float: left;
+    margin-left: 6px;
 }
 
 .livesContainer{
-    width: 100px;
+    width: 117px;
     float: right;
     background-color: #f9f9ee;
-    padding: 10px;
+    padding: 15px;
+    margin-right: 20px;
 }
 
 .wrong-letters-lives-container{
     max-width: 500px;
     margin-bottom: 20px;
     margin-top: 20px;
+    display: block;
 }
 
 .heartImage{
@@ -163,8 +180,8 @@ button {
 }
 
 .btnLettersContainer{
-    max-width: 661px;
-    margin-top: 20px;
+    max-width: 713px;
+    margin-bottom: 80px;
 }
 
 .btnHint{
@@ -173,6 +190,11 @@ button {
     background: url(img/idea.png) 10px 10px no-repeat;
     border-radius: 16px;
     border: 1px solid #d9d9d9;
+    float: right;
+}
+
+.btnHint:disabled{
+    opacity: .50;
 }
 
 .nextWordBtn{
@@ -196,7 +218,7 @@ button {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
-    margin: 2px;
+    margin: 4px;
     min-height: 45px;
     min-width: 45px;
     position: relative;
@@ -208,5 +230,5 @@ button {
     background-color: #00AEEF;  
 }
 .btnLetter:disabled{
-    opacity: .50;
+    opacity: .30;
 }
