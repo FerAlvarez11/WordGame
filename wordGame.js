@@ -2,44 +2,40 @@ function startWordGame(gameContainerElement){
     gameContainerElement.innerHTML = 
 `
 <div class="definitionContainer">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-auto"><p class="definitionP">Definition:</p></div> 
-        </div>  
-        <div class="row justify-content-center">  
-            <div class="col-auto" id="definitionDiv"></div> 
-        </div>      
-        <div class="row justify-content-center">
-            <div class ="col-auto" id="letterDiv"></div>
+    <div class="row justify-content-center">
+        <div class="col-auto"><p class="definitionP">Definition:</p></div> 
+    </div>  
+    <div class="row justify-content-center">  
+        <div class="col-auto" id="definitionDiv"></div> 
+    </div>      
+    <div class="row justify-content-center">
+        <div class ="col-auto" id="letterDiv"></div>
 
-        
-        <div class="row justify-content-center">
-            <div class="col" id="incorrectLettersContainer"> 
-                <div class="incorrectLetters">Wrong letters:</div>
-                <div id="incorrectLetters">-</div>
-            </div>
+    
+    <div class="row justify-content-center">
+        <div class="col" id="incorrectLettersContainer"> 
+            <div class="incorrectLetters">Wrong letters:</div>
+            <div id="incorrectLetters">-</div>
         </div>
-     
-        <div class="row justify-content-center">   
-        <div class="banner-div">          
-            <div class="col-auto" id="btnHintDiv"></div>  
-            <div class="col-auto livesContainer">
-                <img class="heartImage" src="img/heart.png" alt="heart">
-                <div class="lives">Lives</div>
-                <div class="numberOfLives" id="intro">5</div>
-            </div>    
-        </div>    
     </div>
+    
+    <div class="row justify-content-center">   
+    <div class="banner-div">          
+        <div class="col-auto" id="btnHintDiv"></div>  
+        <div class="col-auto livesContainer">
+            <img class="heartImage" src="img/heart.png" alt="heart">
+            <div class="lives">Lives</div>
+            <div class="numberOfLives" id="intro">5</div>
+        </div>    
+    </div>    
 </div>
 
-<div class="container">
-    <div class="row justify-content-center">    
-        <div class="btnLettersContainer">
-            <div class="col-auto" id="btnLettersDiv"></div>
-            </div>
+<div class="row justify-content-center">    
+    <div class="btnLettersContainer">
+        <div class="col-auto" id="btnLettersDiv"></div>
         </div>
-        </div>
-    </div> 
+    </div>
+    </div>
 </div> 
 
 <footer class="text-center text-white fixed-bottom" style="background-color: #fff; border-style: 1px solid black">

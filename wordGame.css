@@ -26,7 +26,6 @@ body {
 .definitionContainer{
     height: 50vH;
     width: 100%;
-    padding: 10px 20px 10px 20px;
 }
 
 .definitionP{
@@ -179,6 +178,7 @@ button {
 .btnLettersContainer{
     max-width: 713px;
     margin:30px 0 80px 0;
+    padding-right: none;
 }
 
 .btnHint{
@@ -215,7 +215,7 @@ button {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
-    margin: 4px;
+    margin: 5px;
     min-height: 45px;
     min-width: 45px;
     position: relative;
