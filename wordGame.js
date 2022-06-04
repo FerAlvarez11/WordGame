@@ -3,36 +3,37 @@ function startWordGame(gameContainerElement){
 `
 <div class="definitionContainer">
     <div class="container">
-        <div class="row justify-content-center">   
-            <div class="banner-div">          
-                <div class="col-auto" id="btnHintDiv"></div>  
-                <div class="col-auto livesContainer">
-                    <img class="heartImage" src="img/heart.png" alt="heart">
-                    <div class="lives">Lives</div>
-                    <div class="numberOfLives" id="intro">5</div>
-                </div>    
-            </div>    
-        </div>
         <div class="row justify-content-center">
-            <div class="col-4"><p class="definitionP">Definition:</p></div> 
+            <div class="col-auto"><p class="definitionP">Definition:</p></div> 
         </div>  
         <div class="row justify-content-center">  
             <div class="col-auto" id="definitionDiv"></div> 
         </div>      
         <div class="row justify-content-center">
-        <div class ="col-auto" id="letterDiv"></div>
+            <div class ="col-auto" id="letterDiv"></div>
+
+        
         <div class="row justify-content-center">
-        <div class="col" id="incorrectLettersContainer"> 
-            <div class="incorrectLetters">Wrong letters:</div>
-            <div id="incorrectLetters">-</div>
+            <div class="col" id="incorrectLettersContainer"> 
+                <div class="incorrectLetters">Wrong letters:</div>
+                <div id="incorrectLetters">-</div>
+            </div>
         </div>
-    </div> 
-    </div>
+     
+        <div class="row justify-content-center">   
+        <div class="banner-div">          
+            <div class="col-auto" id="btnHintDiv"></div>  
+            <div class="col-auto livesContainer">
+                <img class="heartImage" src="img/heart.png" alt="heart">
+                <div class="lives">Lives</div>
+                <div class="numberOfLives" id="intro">5</div>
+            </div>    
+        </div>    
     </div>
 </div>
 
 <div class="container">
-    <div class="row justify-content-center fixed-bottom">    
+    <div class="row justify-content-center">    
         <div class="btnLettersContainer">
             <div class="col-auto" id="btnLettersDiv"></div>
             </div>

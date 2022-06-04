@@ -1,5 +1,6 @@
 .banner-div{
-    width: 500px;
+    width: 238px;
+    margin-top: 15px;
 }
 
 body { 
@@ -26,8 +27,6 @@ body {
     height: 50vH;
     width: 100%;
     padding: 10px 20px 10px 20px;
-    box-shadow: 2px -1px 22px lightgrey;
-    margin-top: 30px;
 }
 
 .definitionP{
@@ -46,23 +45,21 @@ body {
 }
 
 .divLetter {
-    height: 25px;
-    width: 25px;
+    height: 36px;
+    width: 20px;
     position: relative;
     float: left;
-    margin: 1px;
-    margin-bottom: 20px;
+    margin: 2px;
+    margin-bottom: 33px;
     border-bottom: 3px solid black;
     position: relative;
     text-align: center;
     font-family: 'Hind Siliguri', sans-serif;
     font-weight: bolder;
-    font-size: 17px;
-    background-color: #f9f9ee;
+    font-size: 25px;
+    /* background-color: #f9f9ee; */
     border-radius: 0;
     color: black;
-    text-shadow: 2px 2px lightgrey;
-    box-shadow: 3px 1px 3px #000;
     
 }
 
@@ -149,7 +146,7 @@ button {
     width: 117px;
     float: right;
     background-color: #f9f9ee;
-    padding: 15px;
+    padding: 20px;
     margin-right: 20px;
 }
 
@@ -181,7 +178,7 @@ button {
 
 .btnLettersContainer{
     max-width: 713px;
-    margin-bottom: 80px;
+    margin:30px 0 80px 0;
 }
 
 .btnHint{
